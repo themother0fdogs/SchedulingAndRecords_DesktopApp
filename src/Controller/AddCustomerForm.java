@@ -91,12 +91,7 @@ public class AddCustomerForm implements Initializable {
         }
     }
     /** This initializes the countries with its divisions. Separate ObservableLists are created for each country
-     so that each Division with the matching Country ID will be added and separated into that list.
-
-     LAMBDA EXPRESSION #1(same comment is written write above the Lambda coding below): I chose to use the lambda expression
-     here because when a user chooses one of the three countries, the Division's ComboBox will update to only show
-     that country's division. The Country IDs in the Countries table will match
-     up with the Country IDs of the Divisions table.*/
+     so that each Division with the matching Country ID will be added and separated into that list.*/
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
