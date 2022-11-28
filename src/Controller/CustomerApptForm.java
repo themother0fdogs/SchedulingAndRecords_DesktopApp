@@ -137,8 +137,8 @@ public class CustomerApptForm implements Initializable {
         totalTypeMonthLbl.setText(null);
     }
 
-/** This ComboBox is an additional report of my choice (A.3.f on rubric) where the user can see how many appointments
-    each contact has. The user can click on the drop down menu and choose which contact they want to see an
+/** This ComboBox is where the user can see how many appointments each contact has. 
+The user can click on the drop down menu and choose which contact they want to see an
     appointment total for. */
     @FXML
     void onActionContactCombo(ActionEvent event) {
