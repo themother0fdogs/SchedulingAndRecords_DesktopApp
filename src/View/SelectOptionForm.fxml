@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="275.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SelectOptionForm">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="74.0" prefWidth="613.0" text="Select Option">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <HBox layoutX="6.0" layoutY="113.0" prefHeight="100.0" prefWidth="596.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#onActionRecords" prefHeight="25.0" prefWidth="250.0" text="Customer Records">
+               <HBox.margin>
+                  <Insets left="25.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#onActionAppts" prefHeight="25.0" prefWidth="250.0" text="Customer Appointments">
+               <HBox.margin>
+                  <Insets left="45.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <Button layoutX="536.0" layoutY="236.0" mnemonicParsing="false" onAction="#onActionExit" text="Exit" />
+   </children>
+</AnchorPane>

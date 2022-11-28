@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="693.0" prefWidth="1397.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CustomerApptForm">
+   <children>
+      <VBox prefHeight="693.0" prefWidth="1397.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="1397.0" style="-fx-background-color: D3D3D3;" text="Customer Appointments" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Label>
+            <HBox alignment="CENTER" prefHeight="35.0" prefWidth="1029.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="223.0" text="Filter Appointments by: ">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <RadioButton fx:id="showAllRbtn" mnemonicParsing="false" onAction="#onActionShowAllRbtn" prefHeight="20.0" prefWidth="111.0" text="Show All">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="filterToggle" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="currentWeekRbtn" layoutX="892.0" layoutY="10.0" mnemonicParsing="false" onAction="#onActionCurrentWeekRbtn" prefHeight="20.0" prefWidth="138.0" text="Current Week" toggleGroup="$filterToggle">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="currentMonthRbtn" layoutX="940.0" layoutY="10.0" mnemonicParsing="false" onAction="#onActionCurrentMonthRbtn" prefHeight="20.0" prefWidth="135.0" text="Current Month" toggleGroup="$filterToggle">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </RadioButton>
+                  <Label alignment="CENTER" prefHeight="20.0" prefWidth="101.0" text="By Contact ">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="selectContactCombo" onAction="#onActionFilterByContact" prefHeight="25.0" prefWidth="190.0" promptText="Select Contact" />
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </HBox>
+            <TableView fx:id="apptTableView" prefHeight="559.0" prefWidth="1357.0">
+              <columns>
+                <TableColumn fx:id="apptIdCol" prefWidth="107.0" text="Appointment ID" />
+                <TableColumn fx:id="titleCol" prefWidth="125.0" text="Title" />
+                  <TableColumn fx:id="descriptionCol" minWidth="0.0" prefWidth="153.0" text="Description" />
+                  <TableColumn fx:id="locationCol" minWidth="0.0" prefWidth="151.0" text="Location" />
+                  <TableColumn fx:id="contactCol" prefWidth="141.0" text="Contact" />
+                  <TableColumn fx:id="typeCol" prefWidth="121.0" text="Type" />
+                  <TableColumn fx:id="startCol" prefWidth="147.0" text="Start Date/Time" />
+                  <TableColumn fx:id="endCol" prefWidth="175.0" text="End Date/Time" />
+                  <TableColumn fx:id="customerIdCol" prefWidth="141.0" text="Customer ID" />
+                  <TableColumn fx:id="userIdCol" prefWidth="95.0" text="User ID" />
+              </columns>
+               <VBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </VBox.margin>
+            </TableView>
+            <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="1397.0">
+               <children>
+                  <Label prefHeight="20.0" prefWidth="308.0" text="Total number of customer appointments by Type">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="typeCombo" prefWidth="150.0" promptText="Select Type" />
+                  <Label prefHeight="20.0" prefWidth="81.0" text="and Month">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+                  <ComboBox fx:id="monthCombo" prefWidth="150.0" promptText="Select Month" />
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="47.0" text="=" />
+                  <Label fx:id="totalTypeMonthLbl" contentDisplay="CENTER" prefHeight="17.0" prefWidth="113.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="genTypeMonth" mnemonicParsing="false" onAction="#onActionGenerate" text="Generate" />
+                  <Button fx:id="clearSelection" mnemonicParsing="false" onAction="#onActionClear" text="Clear">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin></Button>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="559.0" prefHeight="30.0" prefWidth="1397.0">
+               <children>
+                  <Label prefHeight="20.0" prefWidth="338.0" text="Total number of customer appointments by Contact">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="totalContactCombo" onAction="#onActionContactCombo" prefWidth="150.0" promptText="Select Contact" />
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="47.0" text="=" />
+                  <Label fx:id="totalContactLbl" contentDisplay="CENTER" prefHeight="17.0" prefWidth="113.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button mnemonicParsing="false" onAction="#onActionClearContact" text="Clear" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="20.0" top="10.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="BOTTOM_RIGHT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#onActionAddAppointment" text="Add">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onActionUpdateAppointment" text="Update">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onActionDeleteAppt" text="Delete">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onActionBack" text="Back" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" right="20.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="589.0" prefWidth="1029.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CustomerRecordsForm">
+   <children>
+      <VBox prefHeight="601.0" prefWidth="1029.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="58.0" prefWidth="1029.0" style="-fx-background-color: D3D3D3;" text="Customer Records" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Label>
+            <TableView fx:id="customersTableView" prefHeight="537.0" prefWidth="989.0">
+              <columns>
+                <TableColumn fx:id="idCol" prefWidth="107.0" text="Customer ID" />
+                <TableColumn fx:id="nameCol" prefWidth="133.0" text="Customer Name" />
+                  <TableColumn fx:id="phoneCol" minWidth="0.0" prefWidth="169.0" text="Phone Number" />
+                  <TableColumn fx:id="addressCol" minWidth="0.0" prefWidth="146.0" text="Address" />
+                  <TableColumn fx:id="divisionCol" prefWidth="140.0" text="State/Province" />
+                  <TableColumn fx:id="postalCol" minWidth="0.0" prefWidth="133.0" text="Postal Code" />
+                  <TableColumn fx:id="countryCol" minWidth="0.0" prefWidth="161.0" text="Country" />
+              </columns>
+               <VBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </VBox.margin>
+            </TableView>
+            <HBox alignment="BOTTOM_RIGHT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#onActionAddCustomer" text="Add">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onActionUpdateCustomer" text="Update">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onActionDeleteCustomer" text="Delete">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onActionBack" text="Back" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" right="20.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

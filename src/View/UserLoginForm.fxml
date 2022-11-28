@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.UserLoginForm">
+   <children>
+      <VBox layoutX="6.0" layoutY="30.0" prefHeight="365.0" prefWidth="592.0">
+         <children>
+            <Label fx:id="welcomeLbl" alignment="CENTER" prefHeight="45.0" prefWidth="611.0" text="WELCOME!" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Label>
+            <GridPane prefHeight="131.0" prefWidth="514.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="302.0" minWidth="10.0" prefWidth="213.0" />
+                <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="411.0" minWidth="10.0" prefWidth="379.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="100.0" minHeight="4.0" prefHeight="41.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="100.0" minHeight="3.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="105.0" minHeight="10.0" prefHeight="51.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label fx:id="userIdLbl" alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="170.0" text="User ID">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="passwordLbl" alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="131.0" text="Password" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="userLocationLbl" alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" prefHeight="31.0" prefWidth="140.0" text="User Locaton:" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <Label fx:id="locationLbl" prefHeight="25.0" prefWidth="325.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="20.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="userIdTxt" prefHeight="25.0" prefWidth="200.0" GridPane.columnIndex="1">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="20.0" />
+                     </GridPane.margin></TextField>
+                  <TextField fx:id="passwordTxt" prefHeight="25.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="20.0" />
+                     </GridPane.margin></TextField>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="25.0" top="25.0" />
+               </VBox.margin>
+            </GridPane>
+            <Button fx:id="loginBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onActionLogin" prefHeight="25.0" prefWidth="231.0" style="-fx-background-color: #1B3075;" text="Login" textAlignment="CENTER" textFill="WHITE">
+               <VBox.margin>
+                  <Insets left="175.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="exitBtn" mnemonicParsing="false" onAction="#onActionExit" prefHeight="25.0" prefWidth="231.0" text="Exit">
+               <VBox.margin>
+                  <Insets left="175.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
