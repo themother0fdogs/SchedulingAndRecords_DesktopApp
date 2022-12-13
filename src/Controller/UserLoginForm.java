@@ -111,7 +111,7 @@ public class UserLoginForm implements Initializable {
                 stage.show();
                 return;
                     }
-            else{
+            else if (!userName.equals(validUserName) && password.equals(validPassword)){
                 output.println("Login Failed! - " + "Username: " + userName + " |  Login Attempt: " + easternLoginActivity);
                 output.close();
                 Alert alert = new Alert(Alert.AlertType.ERROR);
