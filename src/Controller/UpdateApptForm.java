@@ -201,15 +201,15 @@ public class UpdateApptForm implements Initializable {
                 return;
             }
 
-            for(Appointments allAppts : DBAppointments.getAllAppts()){
-                LocalDateTime startDT = LocalDateTime.parse(apptStart, format);
-                LocalDateTime endDT = LocalDateTime.parse(apptEnd, format);
+            for(Appointments allAppts : DBAppointments.getAllAppts()) {
+                LocalDateTime startDT = LocalDateTime.parse(start, formatter);
+                LocalDateTime endDT = LocalDateTime.parse(apptEnd, formatter);
                 String allApptDTString = allAppts.getApptStart();
                 String allEndDTString = allAppts.getApptEnd();
-                LocalDateTime allStartDT = LocalDateTime.parse(allApptDTString, format);
-                LocalDateTime allEndDT = LocalDateTime.parse(allEndDTString, format);
+                LocalDateTime allStartDT = LocalDateTime.parse(allApptDTString, formatter);
+                LocalDateTime allEndDT = LocalDateTime.parse(allEndDTString, formatter);
 
-                if(startDT.isAfter(allStartDT) && startDT.isBefore(allEndDT) || endDT.isAfter(allStartDT) && endDT.isBefore(allEndDT)){
+                if(startDT.isAfter(allStartDT) && startDT.isBefore(allEndDT) || endDT.isAfter(allStartDT) && endDT.isBefore(allEndDT)) {
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setContentText("Selected times are overlapping existing appointment times. \nPlease select a different appointment time.");
                     alert.showAndWait();
