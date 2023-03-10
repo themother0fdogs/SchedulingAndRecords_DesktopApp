@@ -25,3 +25,4 @@ HOW TO RUN PROGRAM:
 
 ADDITIONAL INFO: login_activity.txt, which is located in src>Files, was created to log the activity of failed and successful logins.
 
+Link to Demonstration of Project : https://lynhcasidy.com/apptscheduler.html
