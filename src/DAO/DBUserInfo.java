@@ -48,4 +48,13 @@ public class DBUserInfo {
 
         return rs.next();
     }
+    public static Boolean validateUser(String username, String password) throws SQLException {
+        String sql = "SELECT * FROM users WHERE User_Name = ? AND Password = ?";
+        PreparedStatement ps = JDBC.connection.prepareStatement(sql);
+        ps.setString(1,username);
+        ps.setString(2,password);
+        ResultSet rs = ps.executeQuery();
+
+        return rs.next();
+    }
 }
