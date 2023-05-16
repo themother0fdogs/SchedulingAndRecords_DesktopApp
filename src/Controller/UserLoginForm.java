@@ -77,10 +77,7 @@ public class UserLoginForm implements Initializable {
         String password = passwordTxt.getText();
         boolean upcoming = false;
 
-        for (UserInfo users : DBUserInfo.getAllUserInfo()) {
-            String validUserName = users.getUserName();
-            String validPassword = users.getUserPassword();
-            if (userName.equals(validUserName) && password.equals(validPassword)) {
+            if (DBUserInfo.validateUser(userName,password)) {
                 output.println("Login Successful! - " + "Username: " + userName + " |  Login Attempt: " + easternLoginActivity);
                 output.close();
                 for (Appointments appts : DBAppointments.getAllAppts()) {
@@ -121,7 +118,7 @@ public class UserLoginForm implements Initializable {
             }
         }
 
-    }
+    
 
     /** This will check the computer's default language and display the login page accordingly. */
     @Override
